@@ -1,0 +1,26 @@
+.navbar-default {
+  background-image: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: #fff;
+  border: none; }
+
+.navbar-collapse, .container-fluid {
+  padding-left: 0; }
+
+.myNav li {
+  width: 13em;
+  text-align: center;
+  border-bottom: 3px solid #999; }
+  .myNav li a {
+    padding-top: 10px;
+    padding-bottom: 7px;
+    font-size: 1.7em; }
+
+.myNav li:last-child {
+  border-right: 1px solid #999;
+  -webkit-border-radius: 0 0 50px 0;
+          border-radius: 0 0 50px 0; }
+
+.navbar-default {
+  margin-bottom: 10%; }

@@ -1,3 +1,13 @@
+a
+	color: #000	
+a:link
+		color: #000
+a:visited
+		color: #000
+a:hover
+		color: #000
+
+
 .navbar-default
 	background-image: none
 	box-shadow: none
@@ -8,6 +18,8 @@
 		left:  0
 .myNav
 	li
+		z-index: 2
+		background: #fff
 		width: 13em
 		text-align: center
 		border:
@@ -20,11 +32,61 @@
 
 			font-size: 1.7em
 
-	li:last-child
+	li:nth-child(3)
 		border:
 			right: 1px solid #999
 
 		border-radius: 0 0 50px 0
+
+		
     
 .navbar-default
 	margin-bottom:  10%
+
+.container-fluid .navbar-default .collapse .navbar-nav .subbuttons 
+	position: relative
+	left: -15px
+	width: auto
+	z-index: 1
+
+	a
+		padding: 3px 5px 3px 20px;
+
+		font-size: 1em
+	
+
+.container-fluid .navbar-default .collapse .navbar-nav .subbuttons:last-child
+	border:
+		right: 1px solid #999
+
+	border-radius: 0 0 50px 0	
+
+.addBlack, .black	
+	transition: all
+	animation-duration: 1000ms
+	background: #000
+
+.dayGrid
+	cursor: pointer
+
+
+.col-wrap-calendar
+	overflow-y: auto
+
+@media print 
+
+	.black
+
+		background: #000
+		-webkit-print-color-adjust: exact
+
+		print-color-adjust: exact
+
+	.no-print
+		display: none
+
+.lostMoney		
+	color: #F00
+
+.addMoney
+	color: #090

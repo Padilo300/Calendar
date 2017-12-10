@@ -5,16 +5,13 @@ $( document ).ready(function() {
 	function dow(Month,Day) {return new Date(Year,Month,Day).getDay();}//узнаем день недели
     function countMoney(dayWork){ return Math.floor(7000/dayWork)}
     function calculateMoney(){
-        var workingDayR1 = $('#calendarMainWrap .row1 .black').length;// Кол-во выходов по графику
-        var workingDayR2 = $('#calendarMainWrap .row2 .black').length;// Кол-во выходов по графику
-        var workingDayR3 = $('#calendarMainWrap .row3 .black').length;// Кол-во выходов по графику
-        var workingDayR4 = $('#calendarMainWrap .row4 .black').length;// Кол-во выходов по графику
-
-        var workingDayR1Fact = workingDayR1; //Кол-во выходов по факту
+        var workingDayR1 = $('#calendarMainWrap .row1 .black').length;
+        var workingDayR2 = $('#calendarMainWrap .row2 .black').length;
+        var workingDayR3 = $('#calendarMainWrap .row3 .black').length;
+        var workingDayR4 = $('#calendarMainWrap .row4 .black').length;
 
         $('.workingDay').text('Количество смен по графику: ' + workingDayR1);
         $('.price').text('Оплата за выход: ' + countMoney(workingDayR1) + 'грн');
-        $('.visits').text('Выходов по факту: ' + workingDayR1Fact);
         $('.payment').text('Оплата: ' + count + 'грн');
 
         $('#calendarMainWrap .row1 .dayGrid').click(function(){
@@ -22,24 +19,20 @@ $( document ).ready(function() {
 
                     $(this).removeClass('black addBlack'); //eсли рабочий то снять класс (черный)
                     count-= countMoney(workingDayR1); //отнять с оплаты цену за выход на работу
-                    workingDayR1Fact--;//Снять один выход по факту
 
                     $('.workingDay').text('Количество смен по графику: ' + workingDayR1);  
                     $('.price').text('Оплата за выход: ' + countMoney(workingDayR1) + 'грн');
-                    $('.visits').html('Выходов по факту: ' + '<span>' + workingDayR1Fact + '</span>');
-                    $('.payment').html('Оплата: ' + '<span>' + count + 'грн' + '</span>');
+                $('.payment').html('Оплата: ' + '<span>' + count + 'грн' + '</span>');
 
             }else{ //если класс не стоит (выходной) тогда добавить класс (вырабрать рабочую смену)
 
                 $(this).addClass('addBlack');
 
                 count+= countMoney(workingDayR1); // добавить к оплате цену за выход на работу
-                workingDayR1Fact++;//Добавить один выход по факту
 
                 $('.workingDay').text('Количество смен по графику: ' + workingDayR1);
                 $('.price').text('Оплата за выход: ' + countMoney(workingDayR1) + 'грн');
-                $('.visits').html('Выходов по факту: ' + '<span>' + workingDayR1Fact + '</span>');
-                $('.payment').html('Оплата: ' + '<span>' + count + 'грн' + ' ' + '</span>');
+                $('.payment').html('Оплата: ' + '<span>' + count + 'грн' + ' ' + '<i class="fa fa-arrow-up" aria-hidden="true"></i>' + '</span>');
             }
 
             if (count<7000) {
@@ -49,29 +42,18 @@ $( document ).ready(function() {
             }
 
             if (count>7000) {
-                $('.payment span').append('<i class="fa fa-arrow-up" aria-hidden="true"></i>');
                 $('.payment span').addClass('addMoney');
-
-            }
-
-            if (workingDayR1Fact > workingDayR1) {
-                $('.visits span').append('<i class="fa fa-arrow-up" aria-hidden="true"></i>');
-                $('.visits span').addClass('addMoney');
-            }
-            if (workingDayR1Fact < workingDayR1) {
-                $('.visits span').append('<i class="fa fa-arrow-down" aria-hidden="true"></i>');
-                $('.visits span').addClass('lostMoney');
 
             }
         });// end click
     }//end function calculateMoney
     function reverseEachWorkDay(){
         for (var i = 1; i < dInMonth(Month,Year)+1; i++) {
-            $('#calendarMainWrap .wrapDay').append(
+            $('.wrapDay').append(
             '<div class="collum"><div class="dayOfWeak">' + nameDayW[dow(Month-1,i)] + '</div><div class="numberOfWeak">' + i + '</div><div class="row1"><div class="dayGrid"></div></div><div class="row2"><div class="dayGrid"></div></div><div class="row3"><div class="dayGrid"></div></div><div class="row4"><div class="dayGrid"></div></div></div>');
             };
 
-            $($("#calendarMainWrap .row1 .dayGrid").get().reverse()).each(function() {
+            $($(".row1 .dayGrid").get().reverse()).each(function() {
                 scoreR1++;
                 if(scoreR1==5){scoreR1=1}
                 if(scoreR1==3 || scoreR1==4){
@@ -79,7 +61,7 @@ $( document ).ready(function() {
                 
                 }});//end reverse.each
 
-            $($("#calendarMainWrap .row2 .dayGrid").get().reverse()).each(function() {
+            $($(".row2 .dayGrid").get().reverse()).each(function() {
                 scoreR2++;
                 if(scoreR2==5){scoreR2=1}
                 if(scoreR2==3 || scoreR2==4){
@@ -87,7 +69,7 @@ $( document ).ready(function() {
                 
                 }});//end reverse.each
 
-            $($("#calendarMainWrap .row3 .dayGrid").get().reverse()).each(function() {
+            $($(".row3 .dayGrid").get().reverse()).each(function() {
                 scoreR3++;
                 if(scoreR3==5){scoreR3=1}
                 if(scoreR3==3 || scoreR3==4){
@@ -95,7 +77,7 @@ $( document ).ready(function() {
                 
                 }});//end reverse.each
 
-            $($("#calendarMainWrap .row4 .dayGrid").get().reverse()).each(function() {
+            $($(".row4 .dayGrid").get().reverse()).each(function() {
                 scoreR4++;
                 if(scoreR4==5){scoreR4=1}
                 if(scoreR4==3 || scoreR4==4){
@@ -106,7 +88,7 @@ $( document ).ready(function() {
 
     function cycleWorkDay() {
 
-        $.each($('#calendarMainWrap .row1 .dayGrid'), function() { 
+        $.each($('.row1 .dayGrid'), function() { 
             scoreR1++;
                 if(scoreR1==5){scoreR1=1}
                 if(scoreR1==3 || scoreR1==4){
@@ -114,7 +96,7 @@ $( document ).ready(function() {
                 }
         });//end R1
 
-            $.each($('#calendarMainWrap .row2 .dayGrid'), function() { 
+            $.each($('.row2 .dayGrid'), function() { 
             scoreR2++;
                 if(scoreR2==5){scoreR2=1}
                 if(scoreR2==3 || scoreR2==4){
@@ -122,7 +104,7 @@ $( document ).ready(function() {
                 }
         }); //end R2
 
-        $.each($('#calendarMainWrap .row3 .dayGrid'), function() { 
+        $.each($('.row3 .dayGrid'), function() { 
             scoreR3++;
                 if(scoreR3==5){scoreR3=1}
                 if(scoreR3==3 || scoreR3==4){
@@ -130,7 +112,7 @@ $( document ).ready(function() {
                 }
         }); //end R3
 
-        $.each($('#calendarMainWrap .row4 .dayGrid'), function() { 
+        $.each($('.row4 .dayGrid'), function() { 
             scoreR4++;
                 if(scoreR4==5){scoreR4=1}
                 if(scoreR4==3 || scoreR4==4){
@@ -147,6 +129,8 @@ $( document ).ready(function() {
 		Month 		=	tempDay.getMonth()+1,//получаем месяц (от 0 до 11)
 		Year 		= 	tempDay.getFullYear(),// получаем год
 		Day 		=	tempDay.getDate(), //получаем число
+		heightGD	=	$('.grid_days').height(),
+		widthWD		=	$('.grid_days').width(),
 		daysInMonth	=	dInMonth(Month-1,Year),//Количество дней в месяц
 		scoreR1		=	1,
 		scoreR2		=	4,	
@@ -157,7 +141,7 @@ $( document ).ready(function() {
 	$('.month p').append(nameMonth[Month-1]);//имя месяца
 
 	for (var i = 1; i < dInMonth(Month,Year)+1; i++) {
-		$('#calendarMainWrap .wrapDay').append(
+		$('.wrapDay').append(
 			'<div class="collum"><div class="dayOfWeak">' + nameDayW[dow(Month-1,i)] + '</div><div class="numberOfWeak">' + i + '</div><div id="one" class="row1"><div class="dayGrid"></div></div><div class="row2"><div class="dayGrid"></div></div><div class="row3"><div class="dayGrid"></div></div><div class="row4"><div class="dayGrid"></div></div></div>');
 	};//печатаем ячейки \день недели\число месяца\смены
 	

@@ -10,6 +10,7 @@
     <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
     <!-- Latest compiled and minified CSS -->
     <!-- Optional theme -->
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/libs.min.css">
@@ -22,6 +23,7 @@
     <![endif]-->
   </head>
   <body>
+
     <div class="wrap">
       <div class="container-fluid">
         <nav class="navbar navbar-default" role="navigation">
@@ -39,7 +41,7 @@
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav myNav">
+            <ul class="nav navbar-nav myNav animated slideInLeft">
               <li class="active"><a href="#">Репортер</a></li>
               <li><a href="#">Coast</a></li>
               <li><a href="#">Artist</a></li>
@@ -66,72 +68,131 @@
         <row>
           <div class="col-lg-9 col-wrap-calendar">     
             <div class="wrapCalendar">
-              <div id="calendarMainWrap">
-                <div class="month">
-                  <a href="#" id="backMonth" class="no-print" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a> 
-                  <p> </p>
-                  <a href="#" id="nextMonth" class="no-print" ><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                </div>
-                
-                <div class="table_wrap">
-                  <div class="table">
-                    <div class="bartender" id="bar">
-                      <div class="name space">Кафе Репортер</div>
-                      <div class="name space"></div>
-                      <div class="name"><p>Падило Константин</p></div>
-                      <div class="name"><p>Попов Роман</p></div>
-                      <div class="name"><p>Даценко Александр</p></div>
-                      <div class="name"><p>Коваленко Александр</p></div>
-                      
-                    </div>
-                    <div class="grid_days">
-                      <div class="wrapDay">
-                      
-                      </div>
-                    </div>
-                  </div>    
-                </div>
-              </div>
               <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                              Пункт Группы Свертывания #1
-                            </a>
-                          </h4>
+                      <span class="toggle trigger">
+                        <input type="checkbox">
+                        <label data-off="UP" data-on="DWN"></label>
+                      </span>
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" 
+                            class="clickButton"></a>
+                      Кафе
+                    </h4>
                   </div>
                   <div id="collapseOne" class="panel-collapse collapse in">
                     <div class="panel-body">
-                      ...
+                        <div id="calendarMainWrap">
+                          <div class="month">
+                            <a href="#" id="backMonth" class="no-print control-month" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a> 
+                            <p> </p>
+                            <a href="#" id="nextMonth" class="no-print control-month" ><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                          </div>
+                          
+                          <div class="table_wrap">
+                            <div class="table">
+                              <div class="bartender" id="bar">
+                                <div class="name space">Кафе Репортер</div>
+                                <div class="name space"></div>
+                                <div class="name"><p>Падило Константин</p></div>
+                                <div class="name"><p>Попов Роман</p></div>
+                                <div class="name"><p>Даценко Александр</p></div>
+                                <div class="name"><p>Коваленко Александр</p></div>
+                                
+                              </div>
+                              <div class="grid_days">
+                                <div class="wrapDay">
+                                
+                                </div>
+                              </div>
+                            </div>    
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <span class="toggle trigger">
+                        <input type="checkbox">
+                        <label data-off="UP" data-on="DWN"></label>
+                      </span>
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" 
+                            class="clickButton"></a>
+                      ПАБ                            
+                    </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <div id="WrapR_pab">
+                        <div class="month">
+                          <a href="#" id="backMonth" class="no-print control-month" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a> 
+                          <p> </p>
+                          <a href="#" id="nextMonth" class="no-print control-month" ><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                        </div>
+                        
+                        <div class="table_wrap">
+                          <div class="table">
+                            <div class="bartender" id="bar">
+                              <div class="name space">Паб Репортер</div>
+                              <div class="name space"></div>
+                              <div class="name"><p>Ковальчук Алена</p></div>
+                              <div class="name"><p>Червонящий Дмитрий</p></div>
+                              <div class="name"><p>Билецкий Роман</p></div>
+                              <div class="name"><p>Швец Денис</p></div>
+                              <div class="name"><p>Дыхтенко Анатолий</p></div>
+                              
+                            </div>
+                            <div class="grid_days">
+                              <div class="wrapDay">
+                              
+                              </div>
+                            </div>
+                          </div>    
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                              Пункт Группы Свертывания #2
-                            </a>
-                          </h4>
+                      <span class="toggle trigger">
+                        <input type="checkbox">
+                        <label data-off="UP" data-on="DWN"></label>
+                      </span>
+                      <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" id="accordion" class="clickButton">
+                        Ресторан
+                      </a>
+                    </h4>
                   </div>
                   <div id="collapseTwo" class="panel-collapse collapse">
                     <div class="panel-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                    </div>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                              Пункт Группы Свертывания #3
-                            </a>
-                          </h4>
-                  </div>
-                  <div id="collapseThree" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                     <div id="WrapR_rest">
+                        <div class="month">
+                          <a href="#" id="backMonth" class="no-print control-month" ><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a> 
+                          <p> </p>
+                          <a href="#" id="nextMonth" class="no-print control-month" ><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                        </div>
+                        
+                        <div class="table_wrap">
+                          <div class="table">
+                            <div class="bartender" id="bar">
+                              <div class="name space">Ресторан Репортер</div>
+                              <div class="name space"></div>
+                              <div class="name"><p>Левкович Сергей</p></div>
+                              <div class="name"><p>Дьяченко Стас</p></div>                              
+                            </div>
+                            <div class="grid_days">
+                              <div class="wrapDay">
+                              
+                              </div>
+                            </div>
+                          </div>    
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -156,6 +217,7 @@
           </div>
         </row>
         <div class="row">
+       
           <div class="col-lg-12">
             <div class="wrapChat">
               
@@ -171,7 +233,13 @@
     <!-- <script src='js/libs.min.js' ></script>     -->
     
     <script src="libs/calendar.js"></script>
+    <script src="libs/R_pab.js"></script>
+    <script src="libs/R_rest.js"></script>
     <!-- <script src="libs/calculate.js"></script> -->
     <script src="libs/chat.js"></script>
+    <script src="libs/userSripts.js"></script>
   </body>
 </html>
+
+
+

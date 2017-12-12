@@ -1,3 +1,12 @@
+$mq-mobile-portrait		: 320px !default
+$mq-mobile-landscape	: 480px !default
+$mq-tablet-portrait		: 768px !default
+$mq-tablet-landscape	: 1024px !default
+$mq-desktop				: 1382px !default
+
+
+    
+
 a
 	color: #000	
 a:link
@@ -7,15 +16,24 @@ a:visited
 a:hover
 		color: #000
 
+body
+	height: 150vh
 
 .navbar-default
 	background-image: none
 	box-shadow: none
 	background-color: #fff
 	border: none
+
+	.nav 
+		@media (max-width: $mq-tablet-portrait)
+			padding-left: 25px
+			
 .navbar-collapse , .container-fluid
 	padding: 
 		left:  0
+.panel .panel-collapse
+	overflow: auto
 .myNav
 	li
 		z-index: 2
@@ -37,6 +55,8 @@ a:hover
 			right: 1px solid #999
 
 		border-radius: 0 0 50px 0
+
+		box-shadow: 4px -1px 3px #999;
 
 		
     
@@ -90,3 +110,5 @@ a:hover
 
 .addMoney
 	color: #090
+.cbalink
+	display: none

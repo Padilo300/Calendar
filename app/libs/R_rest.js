@@ -132,31 +132,6 @@ $( document ).ready(function() {
                     $(this).addClass('black');
                 }
         }); //end R2
-
-        $.each($('#WrapR_rest .row3 .dayGrid'), function() { 
-            scoreR3++;
-                if(scoreR3==5){scoreR3=1}
-                if(scoreR3==3 || scoreR3==4){
-                    $(this).addClass('black');
-                }
-        }); //end R3
-
-        $.each($('#WrapR_rest .row4 .dayGrid'), function() { 
-            scoreR4++;
-                if(scoreR4==5){scoreR4=1}
-                if(scoreR4==3 || scoreR4==4){
-                    $(this).addClass('black');
-                }
-        });//end R4 
-
-        $.each($('#WrapR_rest .row5 .dayGrid'), function() { 
-            scoreR5++;
-                if(scoreR5==5){scoreR5=1}
-                if(scoreR5==3 || scoreR5==4){
-                    $(this).addClass('black');
-                }
-        });//end R5
-        console.log(scoreR1);
     }//end cycleWorkDay
 	
 	/*------------------------------------установки календаря------------------------------------------------------*/
@@ -170,9 +145,6 @@ $( document ).ready(function() {
 		daysInMonth	=	dInMonth(Month-1,Year),//Количество дней в месяц
 		scoreR1		=	5,
 		scoreR2		=	2,	
-		scoreR3		=	2,	
-		scoreR4		=	0,
-		scoreR5		=	0,
         count       =   7000;
 
 	$('#WrapR_rest .month p').append(nameMonth[Month-1]);//имя месяца
@@ -210,7 +182,6 @@ $( document ).ready(function() {
 
         if ($('body #WrapR_rest .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
             $(preLastElementL2).hasClass('black')=== false &&
-            $(preLastElementL3).hasClass('black')=== false &&
             $(preLastElementL4).hasClass('black')=== true)
              {
             scoreR1 = 3;
@@ -218,53 +189,53 @@ $( document ).ready(function() {
 
         if ($('body #WrapR_rest .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
             $(preLastElementL2).hasClass('black')=== false &&
-            $(preLastElementL3).hasClass('black')=== true &&
-            $(preLastElementL4).hasClass('black')=== true)
+            $(preLastElementL3).hasClass('black')=== true)
              {
             scoreR1 = 2;
         }
 
         if ($('body #WrapR_rest .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
-            $(preLastElement2).hasClass('black')=== true &&
-            $(preLastElement3).hasClass('black')=== true &&
-            $(preLastElement4).hasClass('black')=== true)
+            $(preLastElementL2).hasClass('black')=== true &&
+            $(preLastElementL3).hasClass('black')=== true)
              {
             scoreR1 = 1;
         }
         
-
-    	/*------------------------------------end row1--------------------------------------------*/
-
-        if ($('body #WrapR_rest .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
-            $(preLastElementRow2_2).hasClass('black')=== false &&
-            $(preLastElementRow2_3).hasClass('black')=== false &&
-            $(preLastElementRow2_4).hasClass('black')=== false)
+        if ($('body #WrapR_rest .collum:last-child .row1 .dayGrid').hasClass('black')=== true   &&  
+            $(preLastElementL2).hasClass('black')=== false &&
+            $(preLastElementL4).hasClass('black')=== false)
              {
             scoreR1 = 4;
         }
 
-        if ($('body #WrapR_rest .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
-            $(preLastElementRow2_2).hasClass('black')=== false &&
-            $(preLastElementRow2_3).hasClass('black')=== false &&
-            $(preLastElementRow2_4).hasClass('black')=== true)
+    	/*------------------------------------end row1--------------------------------------------*/
+
+        if ($('body #WrapR_rest .collum:last-child .row2 .dayGrid').hasClass('black')=== false   &&  
+            $(preLastElementLRow2_2).hasClass('black')=== false &&
+            $(preLastElementLRow2_3).hasClass('black')=== false)
              {
-            scoreR1 = 3;
+            scoreR2 = 3;
         }
 
-        if ($('body #WrapR_rest .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
-            $(preLastElementRow2_2).hasClass('black')=== false &&
-            $(preLastElementRow2_3).hasClass('black')=== true &&
-            $(preLastElementRow2_4).hasClass('black')=== true)
+        // if ($('body #WrapR_rest .collum:last-child .row2 .dayGrid').hasClass('black')=== false   &&  
+        //     $(preLastElementLRow2_2).hasClass('black')=== false &&
+        //     $(preLastElementLRow2_3).hasClass('black')=== false)
+        //      {
+        //     scoreR2 = 0;
+        // }
+
+        if ($('body #WrapR_rest .collum:last-child .row2 .dayGrid').hasClass('black')=== false   &&  
+            $(preLastElementLRow2_2).hasClass('black')=== false &&
+            $(preLastElementLRow2_3).hasClass('black')=== true)
              {
-            scoreR1 = 2;
+            scoreR2 = 2;
         }
 
-        if ($('body #WrapR_rest .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
-            $(preLastElementRow2_2).hasClass('black')=== true &&
-            $(preLastElementRow2_3).hasClass('black')=== true &&
-            $(preLastElementRow2_4).hasClass('black')=== true)
+        if ($('body #WrapR_rest .collum:last-child .row2 .dayGrid').hasClass('black')=== false   &&  
+            $(preLastElementLRow2_2).hasClass('black')=== true &&
+            $(preLastElementLRow2_3).hasClass('black')=== true)
              {
-            scoreR1 = 1;
+            scoreR2 = 1;
         }
 
     	/*------------------------------------end row2--------------------------------------------*/

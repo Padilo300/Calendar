@@ -148,6 +148,7 @@ $( document ).ready(function() {
         count       =   7000;
 
 	$('#WrapR_rest .month p').append(nameMonth[Month-1]);//имя месяца
+    $('#WrapR_rest .month p').append('<br><sub>' + Year +'</sub>');
 	
 	prinMonthDayGrid();//Печатаем общую сетку графика
 	cycleWorkDay();//вызываем циклы расчета рабочих дней
@@ -246,6 +247,7 @@ $( document ).ready(function() {
     	e.preventDefault();//отмеа перехода
     	Month++; // переход на следующий месяц
     	$('#WrapR_rest .month p').text(nameMonth[Month-1]);//Печать названия нового месяца
+        $('#WrapR_rest .month p').append('<br><sub>' + Year +'</sub>');
        	$('#WrapR_rest .wrapDay .collum').remove();//удалить старый месяц
 
        	prinMonthDayGrid();//Печатаем общую сетку графика
@@ -371,6 +373,7 @@ $( document ).ready(function() {
     	Month--;
 
     	$('#WrapR_rest .month p').text(nameMonth[Month-1]);//Печать названия нового месяца
+        $('#WrapR_rest .month p').append('<br><sub>' + Year +'</sub>');
        	$('#WrapR_rest .wrapDay .collum').remove();
 
         reverseEachWorkDay();//печатаем раочие дни

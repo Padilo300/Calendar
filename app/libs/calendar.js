@@ -153,6 +153,7 @@ $( document ).ready(function() {
         count       =   7000;
 
 	$('#calendarMainWrap .month p').append(nameMonth[Month-1]);//имя месяца
+    $('#calendarMainWrap .month p').append('<br><sub>' + Year +'</sub>');
 
 	for (var i = 1; i < dInMonth(Month,Year)+1; i++) {
 		$('#calendarMainWrap .wrapDay').append(
@@ -265,7 +266,9 @@ $( document ).ready(function() {
 
     	e.preventDefault();//отмеа перехода
     	Month++; // переход на следующий месяц
+
     	$('#calendarMainWrap .month p').text(nameMonth[Month-1]);//Печать названия нового месяца
+        $('#calendarMainWrap .month p').append('<br><sub>' + Year +'</sub>');
        	$('#calendarMainWrap .wrapDay .collum').remove();//удалить старый месяц
 
        	for (var i = 1; i < dInMonth(Month,Year)+1; i++) {
@@ -284,6 +287,8 @@ $( document ).ready(function() {
     		Year--;
     		Month = 13;
     	}
+        
+
     	if ($('body #calendarMainWrap .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === false	&&	
     		$('body #calendarMainWrap .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === false) {
 
@@ -394,7 +399,10 @@ $( document ).ready(function() {
     	Month--;
 
     	$('#calendarMainWrap .month p').text(nameMonth[Month-1]);//Печать названия нового месяца
+        $('#calendarMainWrap .month p').append('<br><sub>' + Year +'</sub>');
        	$('#calendarMainWrap .wrapDay .collum').remove();
+
+
 
         reverseEachWorkDay();//печатаем раочие дни
         calculateMoney();//расчет оплаты заработной платы

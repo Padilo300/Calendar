@@ -1,3 +1,8 @@
+@import 'animate.css';
+@import 'bootstrap.min.css';
+@import 'button.css';
+@import 'font-awesome.min.css';
+@import 'style.css';
 /*----------------------------------стили календаря--------------------------------------*/
 #calendarMainWrap,#WrapR_pab,#WrapR_rest{
 	min-width: 920px;

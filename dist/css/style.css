@@ -17,7 +17,7 @@ body {
   background-image: none;
   -webkit-box-shadow: none;
           box-shadow: none;
-  background-color: #fff;
+  background-color: transparent;
   border: none; }
   @media (max-width: 768px) {
     .navbar-default .nav {
@@ -97,3 +97,9 @@ body {
 
 .cbalink {
   display: none; }
+
+.fixed {
+  position: fixed;
+  z-index: 99999999999;
+  right: 1%;
+  bottom: 2%; }

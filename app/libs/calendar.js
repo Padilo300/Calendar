@@ -185,81 +185,108 @@ $( document ).ready(function() {
 
 		/*------------------------------------условия для работы графика --------------------------------------------------------*/
 
-    	if ($('body #calendarMainWrap .collum:last-child .row1 .dayGrid').hasClass('black')=== false	&&	
-    		$(preLastElement).hasClass('black')=== false) {
-    		scoreR1 = 2;
-    	}
-    	if ($('body #calendarMainWrap .collum:last-child .row1 .dayGrid').hasClass('black')=== true	&&	
-    		$(preLastElement).hasClass('balck')=== false) {
-    		scoreR1 = 3;
-    	}
-    	if ($('body #calendarMainWrap .collum:last-child .row1 .dayGrid').hasClass('black')=== true	&&	
-    		$(preLastElement).hasClass('black')=== true) {
-    		scoreR1 = 0;
-    	}
-    	if ($('body #calendarMainWrap .collum:last-child .row1 .dayGrid').hasClass('black')=== false	&&	
-    		$(preLastElement).hasClass('black')=== true) {
-    		scoreR1 = 1;
-    	}
+        switch (1) {
+            case $('body #calendarMainWrap .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
+            $(preLastElement).hasClass('black')=== false:
+                scoreR1 = 2;
+                break;
+
+            case $('body #calendarMainWrap .collum:last-child .row1 .dayGrid').hasClass('black')=== true   &&  
+            $(preLastElement).hasClass('balck')=== false:
+                scoreR1 = 3;
+                break;
+
+            case $('body #calendarMainWrap .collum:last-child .row1 .dayGrid').hasClass('black')=== true    &&  
+            $(preLastElement).hasClass('black')=== true:
+                scoreR1 = 0;
+                break;
+
+            case $('body #calendarMainWrap .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
+            $(preLastElement).hasClass('black')=== true:
+                scoreR1 = 1;
+
+        }
+
 
     	/*------------------------------------end row1--------------------------------------------*/
 
+        switch (1) {
+            case $('body #calendarMainWrap .collum:last-child .row2 .dayGrid').hasClass('black')=== false   &&  
+            $(preLastElement).hasClass('black')=== false:
+                scoreR2 = 2;
+                break;
 
-       	if ($('body #calendarMainWrap  .collum:last-child .row2 .dayGrid').hasClass('black')=== false	&&	
-    		$(preLastElement2).hasClass('black')=== false) {
-    		scoreR2 = 2;
-    	}
-    	if ($('body #calendarMainWrap  .collum:last-child .row2 .dayGrid').hasClass('black')=== true	&&	
-    		$(preLastElement2).hasClass('balck')=== false) {
-    		scoreR2 = 3;
-    	}
-    	if ($('body #calendarMainWrap  .collum:last-child .row2 .dayGrid').hasClass('black')=== true	&&	
-    		$(preLastElement2).hasClass('black')=== true) {
-    		scoreR2 = 0;
-    	}
-    	if ($('body #calendarMainWrap .collum:last-child .row2 .dayGrid').hasClass('black')=== false	&&	
-    		$(preLastElement2).hasClass('black')=== true) {
-    		scoreR2 = 1;
-    	}
+            case $('body #calendarMainWrap .collum:last-child .row2 .dayGrid').hasClass('black')=== true   &&  
+            $(preLastElement).hasClass('balck')=== false:
+                scoreR2 = 3;
+                break;
+
+            case $('body #calendarMainWrap .collum:last-child .row2 .dayGrid').hasClass('black')=== true    &&  
+            $(preLastElement).hasClass('black')=== true:
+                scoreR2 = 0;
+                break;
+
+            case $('body #calendarMainWrap .collum:last-child .row2 .dayGrid').hasClass('black')=== false   &&  
+            $(preLastElement).hasClass('black')=== true:
+                scoreR2 = 1;
+
+        }
+
+       	
 
     	/*------------------------------------end row2--------------------------------------------*/
 
-	   	if ($('body #calendarMainWrap .collum:last-child .row3 .dayGrid').hasClass('black')=== false	&&	
-    		$(preLastElement3).hasClass('black')=== false) {
-    		scoreR3 = 2;
-    	}
-    	if ($('body #calendarMainWrap .collum:last-child .row3 .dayGrid').hasClass('black')=== true	&&	
-    		$(preLastElement3).hasClass('balck')=== false) {
-    		scoreR3 = 3;
-    	}
-    	if ($('body #calendarMainWrap .collum:last-child .row3 .dayGrid').hasClass('black')=== true	&&	
-    		$(preLastElement3).hasClass('black')=== true) {
-    		scoreR3 = 0;
-    	}
-    	if ($('body #calendarMainWrap .collum:last-child .row3 .dayGrid').hasClass('black')=== false	&&	
-    		$(preLastElement3).hasClass('black')=== true) {
-    		scoreR3 = 1;
-    	}
+        switch (1) {
+            case $('body #calendarMainWrap .collum:last-child .row3 .dayGrid').hasClass('black')=== false   &&  
+            $(preLastElement).hasClass('black')=== false:
+                scoreR3 = 2;
+                break;
+
+            case $('body #calendarMainWrap .collum:last-child .row3 .dayGrid').hasClass('black')=== true   &&  
+            $(preLastElement).hasClass('balck')=== false:
+                scoreR3 = 3;
+                break;
+
+            case $('body #calendarMainWrap .collum:last-child .row3 .dayGrid').hasClass('black')=== true    &&  
+            $(preLastElement).hasClass('black')=== true:
+                scoreR3 = 0;
+                break;
+
+            case $('body #calendarMainWrap .collum:last-child .row3 .dayGrid').hasClass('black')=== false   &&  
+            $(preLastElement).hasClass('black')=== true:
+                scoreR3 = 1;
+
+        }
+
 
     	/*------------------------------------end row3--------------------------------------------*/
 
+        switch (1) {
+            case 
+                $('body #calendarMainWrap .collum:last-child .row4 .dayGrid').hasClass('black')=== false   &&  
+                $(preLastElement).hasClass('black')=== false:
+                    scoreR4 = 2;
+                    break;
 
-      	if ($('body #calendarMainWrap .collum:last-child .row4 .dayGrid').hasClass('black')=== false	&&	
-    		$(preLastElement4).hasClass('black')=== false) {
-    		scoreR4 = 2;
-    	}
-    	if ($('body #calendarMainWrap .collum:last-child .row4 .dayGrid').hasClass('black')=== true	&&	
-    		$(preLastElement4).hasClass('balck')=== false) {
-    		scoreR4 = 3;
-    	}
-    	if ($('body #calendarMainWrap .collum:last-child .row4 .dayGrid').hasClass('black')=== true	&&	
-    		$(preLastElement4).hasClass('black')=== true) {
-    		scoreR4 = 0;
-    	}
-    	if ($('body #calendarMainWrap .collum:last-child .row4 .dayGrid').hasClass('black')=== false	&&	
-    		$(preLastElement4).hasClass('black')=== true) {
-    		scoreR4 = 1;
-    	}
+            case 
+                $('body #calendarMainWrap .collum:last-child .row4 .dayGrid').hasClass('black')=== true   &&  
+                $(preLastElement).hasClass('balck')=== false:
+                    scoreR4 = 3;
+                    break;
+
+            case 
+                $('body #calendarMainWrap .collum:last-child .row4 .dayGrid').hasClass('black')=== true    &&  
+                $(preLastElement).hasClass('black')=== true:
+                    scoreR4 = 0;
+                    break;
+
+            case 
+                $('body #calendarMainWrap .collum:last-child .row4 .dayGrid').hasClass('black')=== false   &&  
+                $(preLastElement).hasClass('black')=== true:
+                    scoreR4 = 1;
+                    break;
+
+        }
 
     	/*------------------------------------end row4--------------------------------------------*/
 
@@ -283,117 +310,121 @@ $( document ).ready(function() {
 	
     	
     $(" #calendarMainWrap #backMonth").click(function(e){
-    	if (Month==1) {
-    		Year--;
-    		Month = 13;
-    	}
+    	if (Month==1) { Year--; Month = 13;}
         
+        switch (1) {
+            case 
+                $('body #calendarMainWrap .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === false    &&  
+                $('body #calendarMainWrap .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === false:
 
-    	if ($('body #calendarMainWrap .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === false	&&	
-    		$('body #calendarMainWrap .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === false) {
+                    scoreR1 = 2;
+                    break;
+            case 
+                $('body #calendarMainWrap .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === false    &&  
+                $('body #calendarMainWrap .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === false:
 
-    		scoreR1 = 2;
-   		}
+                    scoreR1 = 3;
+                    break;
+            case 
+                $('body #calendarMainWrap .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === false    &&  
+                $('body #calendarMainWrap .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === false:
 
-    	if ($('body #calendarMainWrap .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === true	&&	
-    		$('body #calendarMainWrap .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === false) {
+                    scoreR1 = 0;
+                    break;
+            case 
+                $('body #calendarMainWrap .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === false    &&  
+                $('body #calendarMainWrap .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === false:
 
-    		scoreR1 = 3;
-    	}
-
-    	if ($('body #calendarMainWrap .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === true	&&	
-    		$('body #calendarMainWrap .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === true) {
-
-    		scoreR1 = 0;
-    	}
-
-    	if ($('body #calendarMainWrap .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === false	&&	
-    		$('body #calendarMainWrap .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === true) {
-
-    		scoreR1 = 1	;
-    	}
-
-
+                    scoreR1 = 1;
+                    break;
+        }
     	/*------------------------------------end row1--------------------------------------------*/
 
 
-    	if ($('body #calendarMainWrap .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === false	&&	
-    		$('body #calendarMainWrap .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === false) {
+        switch (1) {
+            case 
+                $('body #calendarMainWrap .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === false    &&  
+                $('body #calendarMainWrap .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === false:
 
-    		scoreR2 = 2;
-   		}
+                    scoreR2 = 2;
+                    break;
+            case 
+                $('body #calendarMainWrap .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === false    &&  
+                $('body #calendarMainWrap .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === false:
 
-    	if ($('body #calendarMainWrap .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === true	&&	
-    		$('body #calendarMainWrap .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === false) {
+                    scoreR2 = 3;
+                    break;
+            case 
+                $('body #calendarMainWrap .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === false    &&  
+                $('body #calendarMainWrap .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === false:
 
-    		scoreR2 = 3;
-    	}
+                    scoreR2 = 0;
+                    break;
+            case 
+                $('body #calendarMainWrap .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === false    &&  
+                $('body #calendarMainWrap .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === false:
 
-    	if ($('body #calendarMainWrap .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === true	&&	
-    		$('body #calendarMainWrap .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === true) {
-
-    		scoreR2 = 0;
-    	}
-
-    	if ($('body #calendarMainWrap .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === false	&&	
-    		$('body #calendarMainWrap .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === true) {
-
-    		scoreR2 = 1	;
-    	}
+                    scoreR2 = 1;
+                    break;
+        }
 
 		/*------------------------------------end row2--------------------------------------------*/    	
 
+        switch (1) {
+            case 
+                $('body #calendarMainWrap .collum:nth-child(1) .row3 .dayGrid').hasClass('black') === false    &&  
+                $('body #calendarMainWrap .collum:nth-child(2) .row3 .dayGrid').hasClass('black') === false:
 
-    	if ($('body  #calendarMainWrap .collum:nth-child(1) .row3 .dayGrid').hasClass('black') === false	&&	
-    		$('body  #calendarMainWrap .collum:nth-child(2) .row3 .dayGrid').hasClass('black') === false) {
+                    scoreR3 = 2;
+                    break;
+            case 
+                $('body #calendarMainWrap .collum:nth-child(1) .row3 .dayGrid').hasClass('black') === false    &&  
+                $('body #calendarMainWrap .collum:nth-child(2) .row3 .dayGrid').hasClass('black') === false:
 
-    		scoreR3 = 2;
-   		}
+                    scoreR3 = 3;
+                    break;
+            case 
+                $('body #calendarMainWrap .collum:nth-child(1) .row3 .dayGrid').hasClass('black') === false    &&  
+                $('body #calendarMainWrap .collum:nth-child(2) .row3 .dayGrid').hasClass('black') === false:
 
-    	if ($('body  #calendarMainWrap .collum:nth-child(1) .row3 .dayGrid').hasClass('black') === true	&&	
-    		$('body  #calendarMainWrap .collum:nth-child(2) .row3 .dayGrid').hasClass('black') === false) {
+                    scoreR3 = 0;
+                    break;
+            case 
+                $('body #calendarMainWrap .collum:nth-child(1) .row3 .dayGrid').hasClass('black') === false    &&  
+                $('body #calendarMainWrap .collum:nth-child(2) .row3 .dayGrid').hasClass('black') === false:
 
-    		scoreR3 = 3;
-    	}
-
-    	if ($('body  #calendarMainWrap .collum:nth-child(1) .row3 .dayGrid').hasClass('black') === true	&&	
-    		$('body  #calendarMainWrap .collum:nth-child(2) .row3 .dayGrid').hasClass('black') === true) {
-
-    		scoreR3 = 0;
-    	}
-
-    	if ($('body  #calendarMainWrap .collum:nth-child(1) .row3 .dayGrid').hasClass('black') === false	&&	
-    		$('body  #calendarMainWrap .collum:nth-child(2) .row3 .dayGrid').hasClass('black') === true) {
-
-    		scoreR3 = 1	;
-    	}
+                    scoreR3 = 1;
+                    break;
+        }
 
     	/*------------------------------------end row3--------------------------------------------*/
 
+        switch (1) {
+            case 
+                $('body #calendarMainWrap .collum:nth-child(1) .row4 .dayGrid').hasClass('black') === false    &&  
+                $('body #calendarMainWrap .collum:nth-child(2) .row4 .dayGrid').hasClass('black') === false:
 
-    	if ($('body #calendarMainWrap .collum:nth-child(1) .row4 .dayGrid').hasClass('black') === false	&&	
-    		$('body #calendarMainWrap .collum:nth-child(2) .row4 .dayGrid').hasClass('black') === false) {
+                    scoreR4 = 2;
+                    break;
+            case 
+                $('body #calendarMainWrap .collum:nth-child(1) .row4 .dayGrid').hasClass('black') === false    &&  
+                $('body #calendarMainWrap .collum:nth-child(2) .row4 .dayGrid').hasClass('black') === false:
 
-    		scoreR4 = 2;
-   		}
+                    scoreR4 = 3;
+                    break;
+            case 
+                $('body #calendarMainWrap .collum:nth-child(1) .row4 .dayGrid').hasClass('black') === false    &&  
+                $('body #calendarMainWrap .collum:nth-child(2) .row4 .dayGrid').hasClass('black') === false:
 
-    	if ($('body #calendarMainWrap .collum:nth-child(1) .row4 .dayGrid').hasClass('black') === true	&&	
-    		$('body #calendarMainWrap .collum:nth-child(2) .row4 .dayGrid').hasClass('black') === false) {
+                    scoreR4 = 0;
+                    break;
+            case 
+                $('body #calendarMainWrap .collum:nth-child(1) .row4 .dayGrid').hasClass('black') === false    &&  
+                $('body #calendarMainWrap .collum:nth-child(2) .row4 .dayGrid').hasClass('black') === false:
 
-    		scoreR4 = 3;
-    	}
-
-    	if ($('body #calendarMainWrap .collum:nth-child(1) .row4 .dayGrid').hasClass('black') === true	&&	
-    		$('body #calendarMainWrap .collum:nth-child(2) .row4 .dayGrid').hasClass('black') === true) {
-
-    		scoreR4 = 0;
-    	}
-
-    	if ($('body #calendarMainWrap .collum:nth-child(1) .row4 .dayGrid').hasClass('black') === false	&&	
-    		$('body #calendarMainWrap .collum:nth-child(2) .row4 .dayGrid').hasClass('black') === true) {
-
-    		scoreR4 = 1	;
-    	}
+                    scoreR4 = 1;
+                    break;
+        }
     	/*------------------------------------end row4--------------------------------------------*/
     	e.preventDefault();//отмена перехода
     	Month--;

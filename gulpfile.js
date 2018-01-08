@@ -19,14 +19,14 @@ gulp.task('sass', function(){ // Создаем таск Sass
 		.pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
 });
 
-gulp.task('browser-sync', function() { // Создаем таск browser-sync
-	browserSync({ // Выполняем browserSync
-		server: { // Определяем параметры сервера
-			baseDir: 'app' // Директория для сервера - app
-		},
-		notify: false // Отключаем уведомления
-	});
-});
+// gulp.task('browser-sync', function() { // Создаем таск browser-sync
+// 	browserSync({ // Выполняем browserSync
+// 		server: { // Определяем параметры сервера
+// 			baseDir: 'app' // Директория для сервера - app
+// 		},
+// 		notify: false // Отключаем уведомления
+// 	});
+// });
 
 gulp.task('scripts', function() {
 	return gulp.src([ 'app/libs/**/*.js'])// Берем все необходимые библиотеки
@@ -42,7 +42,7 @@ gulp.task('css-libs', ['sass'], function() {
 		.pipe(gulp.dest('app/css')); // Выгружаем в папку app/css
 });
 
-gulp.task('watch', ['browser-sync', 'css-libs', 'scripts'], function() {
+gulp.task('watch', [ 'css-libs', 'scripts'], function() {
 	gulp.watch('app/sass/**/*.sass', ['sass']); // Наблюдение за sass файлами в папке sass
 	gulp.watch('app/css/**/*.css', ['css-libs']); // Наблюдение за sass файлами в папке sass
 	gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта

@@ -5,15 +5,15 @@ $( document ).ready(function() {
     function countMoney(dayWork){ return Math.floor(7000/dayWork)}
     function prinMonthDayGrid(){
     		for (var i = 1; i < dInMonth(Month,Year)+1; i++) {
-				$('#WrapR_rest .wrapDay').append(
-					'<div class="collum"><div class="dayOfWeak">' + nameDayW[dow(Month-1,i)] + '</div><div class="numberOfWeak">' + i + '</div><div id="one" class="row1"><div class="dayGrid"></div></div><div class="row2"><div class="dayGrid"></div></div></div>');
+				$('#Wrap_Calendar_ARTIST .wrapDay').append(
+					'<div class="collum"><div class="dayOfWeak">' + nameDayW[dow(Month-1,i)] + '</div><div class="numberOfWeak">' + i + '</div><div id="one" class="row1"><div class="dayGrid"></div></div><div class="row2"><div class="dayGrid"></div></div><div class="row3"><div class="dayGrid"></div></div><div class="row4"><div class="dayGrid"></div></div><div class="row5"><div class="dayGrid"></div></div><div class="row6"><div class="dayGrid"></div></div></div>');
 			};//печатаем ячейки \день недели\число месяца\смены
     }
     function calculateMoney(){
-        var workingDayR1 = $('#WrapR_rest .row1 .black').length;// Кол-во выходов по графику
-        var workingDayR2 = $('#WrapR_rest .row2 .black').length;// Кол-во выходов по графику
-        var workingDayR3 = $('#WrapR_rest .row3 .black').length;// Кол-во выходов по графику
-        var workingDayR4 = $('#WrapR_rest .row4 .black').length;// Кол-во выходов по графику
+        var workingDayR1 = $('#Wrap_Calendar_ARTIST .row1 .black').length;// Кол-во выходов по графику
+        var workingDayR2 = $('#Wrap_Calendar_ARTIST .row2 .black').length;// Кол-во выходов по графику
+        var workingDayR3 = $('#Wrap_Calendar_ARTIST .row3 .black').length;// Кол-во выходов по графику
+        var workingDayR4 = $('#Wrap_Calendar_ARTIST .row4 .black').length;// Кол-во выходов по графику
 
         var workingDayR1Fact = workingDayR1; //Кол-во выходов по факту
 
@@ -22,7 +22,7 @@ $( document ).ready(function() {
         $('.visits').text('Выходов по факту: ' + workingDayR1Fact);
         $('.payment').text('Оплата: ' + count + 'грн');
 
-        $('#WrapR_rest .row1 .dayGrid').click(function(){
+        $('#Wrap_Calendar_ARTIST .row1 .dayGrid').click(function(){
             if ($(this).hasClass('black') || $(this).hasClass('addBlack') === true) { //проверям на рабочий день
 
                     $(this).removeClass('black addBlack'); //eсли рабочий то снять класс (черный)
@@ -73,7 +73,7 @@ $( document ).ready(function() {
     function reverseEachWorkDay(){
     	prinMonthDayGrid();//Печатаем общую сетку графика
 
-            $($("#WrapR_rest .row1 .dayGrid").get().reverse()).each(function() {
+            $($("#Wrap_Calendar_ARTIST .row1 .dayGrid").get().reverse()).each(function() {
                 scoreR1++;
                 if(scoreR1==7){scoreR1=1}
                 if(scoreR1==4 || scoreR1==5 || scoreR1==6){
@@ -81,10 +81,42 @@ $( document ).ready(function() {
                 
                 }});//end reverse.each
 
-            $($("#WrapR_rest .row2 .dayGrid").get().reverse()).each(function() {
+            $($("#Wrap_Calendar_ARTIST .row2 .dayGrid").get().reverse()).each(function() {
                 scoreR2++;
                 if(scoreR2==7){scoreR2=1}
                 if(scoreR2==4 || scoreR2==5 || scoreR2==6){
+                    $(this).addClass('black');
+                
+                }});//end reverse.each
+
+            $($("#Wrap_Calendar_ARTIST .row3 .dayGrid").get().reverse()).each(function() {
+                scoreR3++;
+                if(scoreR3==7){scoreR3=1}
+                if(scoreR3==4 || scoreR3==5 || scoreR3==6){
+                    $(this).addClass('black');
+                
+                }});//end reverse.each
+
+            $($("#Wrap_Calendar_ARTIST .row4 .dayGrid").get().reverse()).each(function() {
+                scoreR4++;
+                if(scoreR4==7){scoreR4=1}
+                if(scoreR4==4 || scoreR4==5 || scoreR4==6){
+                    $(this).addClass('black');
+                
+                }});//end reverse.each
+
+            $($("#Wrap_Calendar_ARTIST .row5 .dayGrid").get().reverse()).each(function() {
+                scoreR5++;
+                if(scoreR5==7){scoreR5=1}
+                if(scoreR5==4 || scoreR5==5 || scoreR5==6){
+                    $(this).addClass('black');
+                
+                }});//end reverse.each
+
+            $($("#Wrap_Calendar_ARTIST .row6 .dayGrid").get().reverse()).each(function() {
+                scoreR6++;
+                if(scoreR6==7){scoreR6=1}
+                if(scoreR6==4 || scoreR6==5 || scoreR6==6){
                     $(this).addClass('black');
                 
                 }});//end reverse.each
@@ -93,7 +125,7 @@ $( document ).ready(function() {
 
     function cycleWorkDay() {
 
-        $.each($('#WrapR_rest .row1 .dayGrid'), function() { 
+        $.each($('#Wrap_Calendar_ARTIST .row1 .dayGrid'), function() { 
             scoreR1++;
                 if(scoreR1==7){scoreR1=1}
                 if(scoreR1==4 || scoreR1==5 || scoreR1==6){
@@ -101,13 +133,47 @@ $( document ).ready(function() {
                 }
         });//end R1
 
-        $.each($('#WrapR_rest .row2 .dayGrid'), function() { 
+        $.each($('#Wrap_Calendar_ARTIST .row2 .dayGrid'), function() { 
             scoreR2++;
                 if(scoreR2==7){scoreR2=1}
                 if(scoreR2==4 || scoreR2==5 || scoreR2==6){
                     $(this).addClass('black');
                 }
         }); //end R2
+
+        $.each($('#Wrap_Calendar_ARTIST .row3 .dayGrid'), function() { 
+            scoreR3++;
+                if(scoreR3==7){scoreR3=1}
+                if(scoreR3==4 || scoreR3==5 || scoreR3==6){
+                    $(this).addClass('black');
+                }
+        }); //end R2
+
+        $.each($('#Wrap_Calendar_ARTIST .row4 .dayGrid'), function() { 
+            scoreR4++;
+                if(scoreR4==7){scoreR4=1}
+                if(scoreR4==4 || scoreR4==5 || scoreR4==6){
+                    $(this).addClass('black');
+                }
+        }); //end R2
+
+        $.each($('#Wrap_Calendar_ARTIST .row5 .dayGrid'), function() { 
+            scoreR5++;
+                if(scoreR5==7){scoreR5=1}
+                if(scoreR5==4 || scoreR5==5 || scoreR5==6){
+                    $(this).addClass('black');
+                }
+        }); //end R2
+
+        $.each($('#Wrap_Calendar_ARTIST .row6 .dayGrid'), function() { 
+            scoreR6++;
+                if(scoreR6==7){scoreR6=1}
+                if(scoreR6==4 || scoreR6==5 || scoreR6==6){
+                    $(this).addClass('black');
+                }
+        }); //end R2                        
+
+
     }//end cycleWorkDay
 	
 	/*------------------------------------установки календаря------------------------------------------------------*/
@@ -119,36 +185,40 @@ $( document ).ready(function() {
 		Year 		= 	tempDay.getFullYear(),// получаем год
 		Day 		=	tempDay.getDate(), //получаем число
 		daysInMonth	=	dInMonth(Month-1,Year),//Количество дней в месяц
-		scoreR1		=	5,
-		scoreR2		=	2,	
+		scoreR1		=	1,
+		scoreR2		=	1,	
+        scoreR3     =   4,  
+        scoreR4     =   4,  
+        scoreR5     =   2,  
+        scoreR6     =   5,  
         count       =   7000;
 
-	$('#WrapR_rest .month p').append(nameMonth[Month-1]);//имя месяца
+	$('#Wrap_Calendar_ARTIST .month p').append(nameMonth[Month-1]);//имя месяца
 	
 	prinMonthDayGrid();//Печатаем общую сетку графика
 	cycleWorkDay();//вызываем циклы расчета рабочих дней
     calculateMoney();//вызываем расчет зароботной платы
 
 	/*-------------------------------------------выбор следующего месяца----------------------------------------------------*/
-    $("#WrapR_rest #nextMonth").click(function(e){
+    $("#Wrap_Calendar_ARTIST #nextMonth").click(function(e){
     	
     	if (Month==12) {
     		Year++
     		Month = 0;
     	}//eсли наступил довый год то добавить год и перейти на январь
 
-        var preLastArr                  =   $('body #WrapR_rest .row1 .dayGrid'); //узнаем сколько элементов есть
+        var preLastArr                  =   $('body #Wrap_Calendar_ARTIST .row1 .dayGrid'); //узнаем сколько элементов есть
         var preLastElementL2            =   preLastArr[preLastArr.length-2];//выберем предпоследний HTML элемент
         var preLastElementL3            =   preLastArr[preLastArr.length-3];//выберем третий с конца HTML элемент
         var preLastElementL4            =   preLastArr[preLastArr.length-4];//выберем четвертый с конца HTML элемент
 
-        var preLastArrRow2                  =   $('body #WrapR_rest .row2 .dayGrid'); //узнаем сколько элементов есть
+        var preLastArrRow2                  =   $('body #Wrap_Calendar_ARTIST .row2 .dayGrid'); //узнаем сколько элементов есть
         var preLastElementLRow2_2            =   preLastArrRow2[preLastArrRow2.length-2];//выберем предпоследний HTML элемент
         var preLastElementLRow2_3            =   preLastArrRow2[preLastArrRow2.length-3];//выберем третий с конца HTML элемент
         var preLastElementLRow2_4            =   preLastArrRow2[preLastArrRow2.length-4];//выберем четвертый с конца HTML элемент
 
 		/*------------------------------------условия для работы графика --------------------------------------------------------*/
-        if ($('body #WrapR_rest .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
+        if ($('body #Wrap_Calendar_ARTIST .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
             $(preLastElementL2).hasClass('black')=== false &&
             $(preLastElementL3).hasClass('black')=== false &&
             $(preLastElementL4).hasClass('black')=== false)
@@ -156,28 +226,28 @@ $( document ).ready(function() {
             scoreR1 = 4;
         }
 
-        if ($('body #WrapR_rest .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
+        if ($('body #Wrap_Calendar_ARTIST .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
             $(preLastElementL2).hasClass('black')=== false &&
             $(preLastElementL4).hasClass('black')=== true)
              {
             scoreR1 = 3;
         }
 
-        if ($('body #WrapR_rest .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
+        if ($('body #Wrap_Calendar_ARTIST .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
             $(preLastElementL2).hasClass('black')=== false &&
             $(preLastElementL3).hasClass('black')=== true)
              {
             scoreR1 = 2;
         }
 
-        if ($('body #WrapR_rest .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
+        if ($('body #Wrap_Calendar_ARTIST .collum:last-child .row1 .dayGrid').hasClass('black')=== false   &&  
             $(preLastElementL2).hasClass('black')=== true &&
             $(preLastElementL3).hasClass('black')=== true)
              {
             scoreR1 = 1;
         }
         
-        if ($('body #WrapR_rest .collum:last-child .row1 .dayGrid').hasClass('black')=== true   &&  
+        if ($('body #Wrap_Calendar_ARTIST .collum:last-child .row1 .dayGrid').hasClass('black')=== true   &&  
             $(preLastElementL2).hasClass('black')=== false &&
             $(preLastElementL4).hasClass('black')=== false)
              {
@@ -186,28 +256,28 @@ $( document ).ready(function() {
 
     	/*------------------------------------end row1--------------------------------------------*/
 
-        if ($('body #WrapR_rest .collum:last-child .row2 .dayGrid').hasClass('black')=== false   &&  
+        if ($('body #Wrap_Calendar_ARTIST .collum:last-child .row2 .dayGrid').hasClass('black')=== false   &&  
             $(preLastElementLRow2_2).hasClass('black')=== false &&
             $(preLastElementLRow2_3).hasClass('black')=== false)
              {
             scoreR2 = 3;
         }
 
-        // if ($('body #WrapR_rest .collum:last-child .row2 .dayGrid').hasClass('black')=== false   &&  
+        // if ($('body #Wrap_Calendar_ARTIST .collum:last-child .row2 .dayGrid').hasClass('black')=== false   &&  
         //     $(preLastElementLRow2_2).hasClass('black')=== false &&
         //     $(preLastElementLRow2_3).hasClass('black')=== false)
         //      {
         //     scoreR2 = 0;
         // }
 
-        if ($('body #WrapR_rest .collum:last-child .row2 .dayGrid').hasClass('black')=== false   &&  
+        if ($('body #Wrap_Calendar_ARTIST .collum:last-child .row2 .dayGrid').hasClass('black')=== false   &&  
             $(preLastElementLRow2_2).hasClass('black')=== false &&
             $(preLastElementLRow2_3).hasClass('black')=== true)
              {
             scoreR2 = 2;
         }
 
-        if ($('body #WrapR_rest .collum:last-child .row2 .dayGrid').hasClass('black')=== false   &&  
+        if ($('body #Wrap_Calendar_ARTIST .collum:last-child .row2 .dayGrid').hasClass('black')=== false   &&  
             $(preLastElementLRow2_2).hasClass('black')=== true &&
             $(preLastElementLRow2_3).hasClass('black')=== true)
              {
@@ -221,8 +291,8 @@ $( document ).ready(function() {
 
     	e.preventDefault();//отмеа перехода
     	Month++; // переход на следующий месяц
-    	$('#WrapR_rest .month p').text(nameMonth[Month-1]);//Печать названия нового месяца
-       	$('#WrapR_rest .wrapDay .collum').remove();//удалить старый месяц
+    	$('#Wrap_Calendar_ARTIST .month p').text(nameMonth[Month-1]);//Печать названия нового месяца
+       	$('#Wrap_Calendar_ARTIST .wrapDay .collum').remove();//удалить старый месяц
 
        	prinMonthDayGrid();//Печатаем общую сетку графика
 		//end for
@@ -232,49 +302,49 @@ $( document ).ready(function() {
     });//end click	
 	
     	
-    $(" #WrapR_rest #backMonth").click(function(e){
+    $(" #Wrap_Calendar_ARTIST #backMonth").click(function(e){
     	if (Month==1) {
     		Year--;
     		Month = 13;
     	}
-    	if ($('body #WrapR_rest .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === false	&&	
-    		$('body #WrapR_rest .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === false   &&
-            $('body #WrapR_rest .collum:nth-child(3) .row1 .dayGrid').hasClass('black') === false) {
+    	if ($('body #Wrap_Calendar_ARTIST .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === false	&&	
+    		$('body #Wrap_Calendar_ARTIST .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === false   &&
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(3) .row1 .dayGrid').hasClass('black') === false) {
 
     		scoreR1 = 3;
    		}
 
-        if ($('body #WrapR_rest .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === false   &&  
-            $('body #WrapR_rest .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === false   &&
-            $('body #WrapR_rest .collum:nth-child(3) .row1 .dayGrid').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_ARTIST .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === false   &&  
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === false   &&
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(3) .row1 .dayGrid').hasClass('black') === true) {
 
             scoreR1 = 2;
         }
 
-        if ($('body #WrapR_rest .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === false   &&  
-            $('body #WrapR_rest .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === true    &&
-            $('body #WrapR_rest .collum:nth-child(3) .row1 .dayGrid').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_ARTIST .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === false   &&  
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === true    &&
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(3) .row1 .dayGrid').hasClass('black') === true) {
 
             scoreR1 = 1;
         }
 
-        if ($('body #WrapR_rest .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === true   &&  
-            $('body #WrapR_rest .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === true   &&
-            $('body #WrapR_rest .collum:nth-child(3) .row1 .dayGrid').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_ARTIST .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === true   &&  
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === true   &&
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(3) .row1 .dayGrid').hasClass('black') === true) {
 
             scoreR1 = 0;
         }
 
-        if ($('body #WrapR_rest .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === true   &&  
-            $('body #WrapR_rest .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === true   &&
-            $('body #WrapR_rest .collum:nth-child(3) .row1 .dayGrid').hasClass('black') === false) {
+        if ($('body #Wrap_Calendar_ARTIST .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === true   &&  
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === true   &&
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(3) .row1 .dayGrid').hasClass('black') === false) {
 
             scoreR1 = 5;
         }
 
-        if ($('body #WrapR_rest .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === true   &&  
-            $('body #WrapR_rest .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === false  &&
-            $('body #WrapR_rest .collum:nth-child(3) .row1 .dayGrid').hasClass('black') === false) {
+        if ($('body #Wrap_Calendar_ARTIST .collum:nth-child(1) .row1 .dayGrid').hasClass('black') === true   &&  
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(2) .row1 .dayGrid').hasClass('black') === false  &&
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(3) .row1 .dayGrid').hasClass('black') === false) {
 
             scoreR1 = 4;
         }
@@ -286,44 +356,44 @@ $( document ).ready(function() {
     	/*------------------------------------end row1--------------------------------------------*/
 
 
-        if ($('body #WrapR_rest .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === false   &&  
-            $('body #WrapR_rest .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === false   &&
-            $('body #WrapR_rest .collum:nth-child(3) .row2 .dayGrid').hasClass('black') === false) {
+        if ($('body #Wrap_Calendar_ARTIST .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === false   &&  
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === false   &&
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(3) .row2 .dayGrid').hasClass('black') === false) {
 
             scoreR2 = 3;
         }
 
-        if ($('body #WrapR_rest .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === false   &&  
-            $('body #WrapR_rest .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === false   &&
-            $('body #WrapR_rest .collum:nth-child(3) .row2 .dayGrid').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_ARTIST .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === false   &&  
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === false   &&
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(3) .row2 .dayGrid').hasClass('black') === true) {
 
             scoreR2 = 2;
         }
 
-        if ($('body #WrapR_rest .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === false   &&  
-            $('body #WrapR_rest .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === true    &&
-            $('body #WrapR_rest .collum:nth-child(3) .row2 .dayGrid').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_ARTIST .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === false   &&  
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === true    &&
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(3) .row2 .dayGrid').hasClass('black') === true) {
 
             scoreR2 = 1;
         }
 
-        if ($('body #WrapR_rest .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === true   &&  
-            $('body #WrapR_rest .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === true   &&
-            $('body #WrapR_rest .collum:nth-child(3) .row2 .dayGrid').hasClass('black') === true) {
+        if ($('body #Wrap_Calendar_ARTIST .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === true   &&  
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === true   &&
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(3) .row2 .dayGrid').hasClass('black') === true) {
 
             scoreR2 = 0;
         }
 
-        if ($('body #WrapR_rest .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === true   &&  
-            $('body #WrapR_rest .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === true   &&
-            $('body #WrapR_rest .collum:nth-child(3) .row2 .dayGrid').hasClass('black') === false) {
+        if ($('body #Wrap_Calendar_ARTIST .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === true   &&  
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === true   &&
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(3) .row2 .dayGrid').hasClass('black') === false) {
 
             scoreR2 = 5;
         }
 
-        if ($('body #WrapR_rest .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === true   &&  
-            $('body #WrapR_rest .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === false  &&
-            $('body #WrapR_rest .collum:nth-child(3) .row2 .dayGrid').hasClass('black') === false) {
+        if ($('body #Wrap_Calendar_ARTIST .collum:nth-child(1) .row2 .dayGrid').hasClass('black') === true   &&  
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(2) .row2 .dayGrid').hasClass('black') === false  &&
+            $('body #Wrap_Calendar_ARTIST .collum:nth-child(3) .row2 .dayGrid').hasClass('black') === false) {
 
             scoreR2 = 4;
         }
@@ -332,8 +402,8 @@ $( document ).ready(function() {
     	e.preventDefault();//отмена перехода
     	Month--;
 
-    	$('#WrapR_rest .month p').text(nameMonth[Month-1]);//Печать названия нового месяца
-       	$('#WrapR_rest .wrapDay .collum').remove();
+    	$('#Wrap_Calendar_ARTIST .month p').text(nameMonth[Month-1]);//Печать названия нового месяца
+       	$('#Wrap_Calendar_ARTIST .wrapDay .collum').remove();
 
         reverseEachWorkDay();//печатаем раочие дни
         calculateMoney();//расчет оплаты заработной платы
